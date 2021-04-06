@@ -1,24 +1,28 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using RESTsimpleCD.Managers;
-using System;
 using System.Collections.Generic;
-using System.Text;
+using RESTsimpleCD.Models;
 
 namespace RESTsimpleCD.Managers.Tests
 {
     [TestClass()]
     public class BooksManagerTests
     {
-        [TestMethod()]
+        private readonly BooksManager _manager = new BooksManager();
+
+        [TestMethod]
         public void GetAllTest()
         {
-            Assert.Fail();
+            List<Book> allBooks = _manager.GetAll();
+            Assert.AreEqual(2, allBooks.Count);
         }
 
         [TestMethod()]
         public void GetByIdTest()
         {
-            Assert.Fail();
+            Book book = _manager.GetById(1000);
+            Assert.IsNull(book);
+            book = _manager.GetById(1);
+            Assert.IsNotNull(book);
         }
     }
 }
