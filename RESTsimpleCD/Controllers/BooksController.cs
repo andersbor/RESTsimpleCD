@@ -1,8 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using RESTsimpleCD.Managers;
 using RESTsimpleCD.Models;
 
@@ -31,8 +28,9 @@ namespace RESTsimpleCD.Controllers
 
         // POST api/<BooksController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public Book Post([FromBody] Book value)
         {
+            return _manager.Add(value);
         }
 
         // PUT api/<BooksController>/5

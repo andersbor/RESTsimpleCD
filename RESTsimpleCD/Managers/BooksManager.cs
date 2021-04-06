@@ -21,5 +21,12 @@ namespace RESTsimpleCD.Managers
         {
             return Data.FirstOrDefault(book => book.Id == id);
         }
+
+        public Book Add(Book b)
+        {
+            b.Id = _nextId++;
+            Data.Add(b);
+            return b;
+        }
     }
 }
