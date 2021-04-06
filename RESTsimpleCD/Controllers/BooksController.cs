@@ -14,19 +14,19 @@ namespace RESTsimpleCD.Controllers
     [ApiController]
     public class BooksController : ControllerBase
     {
-        private readonly BooksManager manager = new BooksManager();
+        private readonly BooksManager _manager = new BooksManager();
         // GET: api/<BooksController>
         [HttpGet]
         public IEnumerable<Book> Get()
         {
-            return manager.GetAll();
+            return _manager.GetAll();
         }
 
         // GET api/<BooksController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Book Get(int id)
         {
-            return "value";
+            return _manager.GetById(id);
         }
 
         // POST api/<BooksController>

@@ -16,5 +16,10 @@ namespace RESTsimpleCD.Managers
         };
 
         public List<Book> GetAll() { return new List<Book>(Data); }
+
+        public Book GetById(int id)
+        {
+            return Data.FirstOrDefault(book => book.Id == id);
+        }
     }
 }
