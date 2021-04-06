@@ -13,7 +13,7 @@ namespace RESTsimpleCD.Managers.Tests
         public void GetAllTest()
         {
             List<Book> allBooks = _manager.GetAll();
-            Assert.AreEqual(2, allBooks.Count);
+            Assert.AreEqual(3, allBooks.Count);
         }
 
         [TestMethod()]
