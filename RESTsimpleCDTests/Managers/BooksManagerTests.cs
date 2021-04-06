@@ -15,7 +15,7 @@ namespace RESTsimpleCD.Managers.Tests
         {
             BooksManager manager = new BooksManager();
             List<Book> all = manager.GetAll();
-            Assert.AreEqual(3, all.Count);
+            Assert.AreEqual(30, all.Count);
 
             Book book = manager.GetById(1);
             Assert.AreEqual("Some title", book.Title);
